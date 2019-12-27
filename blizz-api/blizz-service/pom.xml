@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>blizz-api</artifactId>
+        <groupId>com.blizz.api</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>blizz-service</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>blizz-service-core</module>
+        <module>blizz-service-beer-grain</module>
+        <module>blizz-service-beer-hop</module>
+        <module>blizz-service-beer-yeast</module>
+        <module>blizz-service-beer-recipe</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.blizz.api</groupId>
+            <artifactId>blizz-persistence-beer</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
