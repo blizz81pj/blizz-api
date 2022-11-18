@@ -1,0 +1,81 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "BeerNetContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": "Entities\\BeerNetContext\\",
+   "OutputPath": "Entities\\BeerNetContext\\Models\\",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "BeerStuff.DataAccess",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "beer_adjunct",
+         "ObjectType": 0
+      },
+      {
+         "Name": "beer_grain",
+         "ObjectType": 0
+      },
+      {
+         "Name": "beer_hop",
+         "ObjectType": 0
+      },
+      {
+         "Name": "beer_recipe",
+         "ObjectType": 0
+      },
+      {
+         "Name": "beer_recipe_adjunct",
+         "ObjectType": 0
+      },
+      {
+         "Name": "beer_recipe_grain",
+         "ObjectType": 0
+      },
+      {
+         "Name": "beer_recipe_hop",
+         "ObjectType": 0
+      },
+      {
+         "Name": "beer_recipe_mash_step",
+         "ObjectType": 0
+      },
+      {
+         "Name": "beer_recipe_note",
+         "ObjectType": 0
+      },
+      {
+         "Name": "beer_recipe_yeast",
+         "ObjectType": 0
+      },
+      {
+         "Name": "beer_yeast",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": ".beer_net",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

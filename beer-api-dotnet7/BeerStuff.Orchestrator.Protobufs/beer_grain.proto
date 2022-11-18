@@ -1,0 +1,51 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "shared.proto";
+
+package beer_grain;
+
+option csharp_namespace = "BeerStuff.Orchestrator.BeerGrain";
+
+service BeerGrainService {
+	rpc CreateBeerGrain (CreateBeerGrainRequest) returns (CreateBeerGrainResponse);
+	rpc RetrieveBeerGrain (RetrieveBeerGrainRequest) returns (RetrieveBeerGrainResponse);
+}
+
+message CreateBeerGrainRequest {
+	string name = 1;
+	.google.protobuf.StringValue manufacturer = 2;
+	.google.protobuf.Int32Value lovibond = 3;
+	.shared.Decimal potential_gravity = 4;
+}
+
+message CreateBeerGrainResponse {
+	uint32 beer_grain_id = 1;
+	.shared.ResponseResult result = 2;
+}
+
+message RetrieveBeerGrainRequest {
+	uint32 beer_grain_id = 1;
+	.google.protobuf.StringValue name_contains = 2;
+	PagingParams paging_parameters = 3;
+}
+
+message RetrieveBeerGrainResponse { 
+	BeerGrain beer_grain = 1;
+	.shared.ResponseResult result = 2;
+}
+
+message BeerGrain {
+	uint32 beer_grain_id = 1;
+	string name = 2;
+	.google.protobuf.StringValue manufacturer = 3;
+	.google.protobuf.Int32Value lovibond = 4;
+	.shared.Decimal potential_gravity = 5;
+	google.protobuf.Timestamp row_created = 6;
+	google.protobuf.Timestamp row_modified = 7;
+}
+
+message PagingParams {
+	.google.protobuf.Int32Value limit = 1;
+}

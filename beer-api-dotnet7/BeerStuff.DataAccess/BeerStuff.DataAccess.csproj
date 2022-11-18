@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <UserSecretsId>11111111-1111-1111-1111-111111111111</UserSecretsId>
+    <Nullable>enable</Nullable>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>SA0001</NoWarn>
+  </PropertyGroup>
+
+	<ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.50.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.7" />
+		<PackageReference Include="MySql.Data" Version="8.0.31" />
+		<PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.7" />
+		<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+		<PackageReference Include="SonarAnalyzer.CSharp" Version="8.30.0.37606">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>	
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BeerStuff.DataAccess.Protobufs\BeerStuff.DataAccess.Protobufs.csproj" />
+  </ItemGroup>
+</Project>

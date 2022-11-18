@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <UserSecretsId>11111111-1111-1111-1111-111111111111</UserSecretsId>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Scripts\**" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup-core" Version="4.6.3" />
+    <PackageReference Include="dbup-mysql" Version="4.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.31" />
+
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.27.0.35380">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+		<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+</Project>
