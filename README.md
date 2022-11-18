@@ -1,4 +1,4 @@
-#Public Repo for Phil Jonak home projects and spit-balling
+# Public Repo for Phil Jonak home projects and spit-balling
 
 ## beer-api-java
 This directory contains a Spring Boot Java application with some JPA wrangling for beer recipe models that are persisted in a local MySQL instance.
