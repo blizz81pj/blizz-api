@@ -15,7 +15,7 @@ This solution has a DbUp project with all of the MySQL scripts stored in version
 Example of my secrets.json:
 ```
 {
-  // these normally would be stored in Azure app config but that costs me $$
+  // these normally would be stored in something like Azure app config + Azure key vault but that costs me $$
   "ConnectionStrings": {
     "MySql.Beer_Net": "Server=localhost;Database=beer_net;Uid=some_user_id;Pwd=some_password;"
   }
