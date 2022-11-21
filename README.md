@@ -1,5 +1,8 @@
 # Public Repo for Phil Jonak's home projects and spit-balling
 
+## Beer Recipe Book Conversion
+One side project goal I'm working towards in these repositories is replacing a physical binder that contains many recipes for beers I have brewed at home.
+
 ## beer-api-java
 This directory contains a Spring Boot Java application with some JPA wrangling for beer recipe models that are persisted in a local MySQL instance.
 
