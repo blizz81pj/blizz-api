@@ -3,7 +3,7 @@
 ## beer-api-java
 This directory contains a Spring Boot Java application with some JPA wrangling for beer recipe models that are persisted in a local MySQL instance.
 
-Going back to 2019, I think there's limited functionality here and a bit of yuckyness (ex. the database username/pw are stored in plain text config).
+Going back to 2019, I think there's some limited REST functionality here and a bit of yuckyness (ex. the database username/pw are stored in plain text config).
 
 ## beer-api-dotnet7
 This directory contains a .net solution with some projects - mostly .net 7-targeted gRPC services.  In a microservice application world, each project would likely live as its own separate application.  The protobuf / contract projects would probably be deployed as nuget packages and the gRPC services themselves deployed to some sort of CI/CD cloud presence, but I don't intend to pay $ for these apps and will rather run them locally.
