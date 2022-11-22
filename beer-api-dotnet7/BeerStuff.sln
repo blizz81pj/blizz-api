@@ -9,13 +9,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerStuff.DbUp", "BeerStuff
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerStuff.DataAccess.Protobufs", "BeerStuff.DataAccess.Protobufs\BeerStuff.DataAccess.Protobufs.csproj", "{DA00BCDC-D187-4EE5-B051-57BC7993726F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerStuff.Orchestrator", "BeerStuff.Orchestrator\BeerStuff.Orchestrator.csproj", "{0893D23C-5EE2-4F47-B32B-D10C78296563}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerStuff.Orchestrator", "BeerStuff.Orchestrator\BeerStuff.Orchestrator.csproj", "{0893D23C-5EE2-4F47-B32B-D10C78296563}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerStuff.Orchestrator.Protobufs", "BeerStuff.Orchestrator.Protobufs\BeerStuff.Orchestrator.Protobufs.csproj", "{E9CF4C4F-D61B-4F60-AC0F-9ADA91D05D94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerStuff.Orchestrator.Protobufs", "BeerStuff.Orchestrator.Protobufs\BeerStuff.Orchestrator.Protobufs.csproj", "{E9CF4C4F-D61B-4F60-AC0F-9ADA91D05D94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerStuff.Api", "BeerStuff.Api\BeerStuff.Api.csproj", "{55B08391-71F4-4172-A066-B6B8F0563BBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerStuff.Api", "BeerStuff.Api\BeerStuff.Api.csproj", "{55B08391-71F4-4172-A066-B6B8F0563BBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerStuff.Api.Protobufs", "BeerStuff.Api.Protobufs\BeerStuff.Api.Protobufs.csproj", "{B7ADD17A-DC3B-407A-A22E-0AE36EB21FC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerStuff.Api.Protobufs", "BeerStuff.Api.Protobufs\BeerStuff.Api.Protobufs.csproj", "{B7ADD17A-DC3B-407A-A22E-0AE36EB21FC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerStuff.DataAccess.Tests", "BeerStuff.DataAccess.Tests\BeerStuff.DataAccess.Tests.csproj", "{37DB7384-7FF2-4923-9519-C33EC7911D20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerStuff.Orchestrator.Tests", "BeerStuff.Orchestrator.Tests\BeerStuff.Orchestrator.Tests.csproj", "{C2BD5EBF-2BA4-46AE-80D6-EF59E5759883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerStuff.Api.Tests", "BeerStuff.Api.Tests\BeerStuff.Api.Tests.csproj", "{9C6C85CE-927F-4148-9C41-896F07FE2584}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,18 @@ Global
 		{B7ADD17A-DC3B-407A-A22E-0AE36EB21FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7ADD17A-DC3B-407A-A22E-0AE36EB21FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7ADD17A-DC3B-407A-A22E-0AE36EB21FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37DB7384-7FF2-4923-9519-C33EC7911D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37DB7384-7FF2-4923-9519-C33EC7911D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37DB7384-7FF2-4923-9519-C33EC7911D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37DB7384-7FF2-4923-9519-C33EC7911D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BD5EBF-2BA4-46AE-80D6-EF59E5759883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BD5EBF-2BA4-46AE-80D6-EF59E5759883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BD5EBF-2BA4-46AE-80D6-EF59E5759883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BD5EBF-2BA4-46AE-80D6-EF59E5759883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C6C85CE-927F-4148-9C41-896F07FE2584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C6C85CE-927F-4148-9C41-896F07FE2584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C6C85CE-927F-4148-9C41-896F07FE2584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C6C85CE-927F-4148-9C41-896F07FE2584}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -32,7 +32,7 @@ namespace BeerStuff.DataAccess.Accessors.DB
                 Lovibond = createBeerGrainRequest.Lovibond,
             };
 
-            if (createBeerGrainRequest.PotentialGravity > 0)
+            if (createBeerGrainRequest.PotentialGravity != null && createBeerGrainRequest.PotentialGravity > 0)
             {
                 beerGrain.PotentialGravity = createBeerGrainRequest.PotentialGravity;
             }

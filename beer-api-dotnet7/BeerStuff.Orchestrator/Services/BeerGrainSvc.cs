@@ -1,6 +1,8 @@
 ﻿using BeerStuff.Orchestrator.BeerGrain;
 using BeerStuff.Orchestrator.Mappings;
+using BeerStuff.Orchestrator.Shared;
 using Grpc.Core;
+using System;
 using System.Threading.Tasks;
 
 namespace BeerStuff.Orchestrator.Services
@@ -24,19 +26,48 @@ namespace BeerStuff.Orchestrator.Services
             // (batch job / cron job operation), have a common place to output logging for visibility/alerting, etc.
             // in actuality here we're doing pretty much straight CRUD operations where contracts between services all the way
             // down are generally identical, so a bit redundant
-            var response = await _beerGrainServiceClient.CreateBeerGrainAsync(CreateBeerGrainRequestMap.Map(request));
+            try
+            {
+                var response =
+                    await _beerGrainServiceClient.CreateBeerGrainAsync(CreateBeerGrainRequestMap.Map(request));
 
-            return CreateBeerGrainResponseMap.Map(response);
+                return CreateBeerGrainResponseMap.Map(response);
+            }
+            catch (Exception ex)
+            {
+                return new CreateBeerGrainResponse
+                {
+                    Result = new ResponseResult
+                    {
+                        Successful = false,
+                        Message = ex.Message,
+                    },
+                };
+            }
         }
 
         public override async Task<RetrieveBeerGrainResponse> RetrieveBeerGrain(
             RetrieveBeerGrainRequest request,
             ServerCallContext context)
         {
-            var response =
-                await _beerGrainServiceClient.RetrieveBeerGrainAsync(RetrieveBeerGrainRequestMap.Map(request));
+            try
+            {
+                var response =
+                    await _beerGrainServiceClient.RetrieveBeerGrainAsync(RetrieveBeerGrainRequestMap.Map(request));
 
-            return RetrieveBeerGrainResponseMap.Map(response);
+                return RetrieveBeerGrainResponseMap.Map(response);
+            }
+            catch (Exception ex)
+            {
+                return new RetrieveBeerGrainResponse
+                {
+                    Result = new ResponseResult
+                    {
+                        Successful = false,
+                        Message = ex.Message,
+                    },
+                };
+            }
         }
     }
 }
