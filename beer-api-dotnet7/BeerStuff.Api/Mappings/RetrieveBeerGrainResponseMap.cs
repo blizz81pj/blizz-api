@@ -15,9 +15,14 @@ namespace BeerStuff.Api.Mappings
                     Name = response.BeerGrain.Name,
                     Manufacturer = response.BeerGrain.Manufacturer,
                     Lovibond = response.BeerGrain.Lovibond,
-                    PotentialGravity = new Decimal(response.BeerGrain.PotentialGravity.Units, response.BeerGrain.PotentialGravity.Nanos),
+                    PotentialGravity = response.BeerGrain.PotentialGravity != null ? new Decimal(response.BeerGrain.PotentialGravity.Units, response.BeerGrain.PotentialGravity.Nanos) : null,
                     RowCreated = response.BeerGrain.RowCreated,
                     RowModified = response.BeerGrain.RowModified,
+                },
+                Result = new ResponseResult
+                {
+                    Successful = response.Result.Successful,
+                    Message = response.Result.Message,
                 },
             };
         }

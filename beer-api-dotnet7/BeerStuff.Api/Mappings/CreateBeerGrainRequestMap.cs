@@ -11,7 +11,7 @@ namespace BeerStuff.Api.Mappings
                 Name = request.Name,
                 Manufacturer = request.Manufacturer,
                 Lovibond = request.Lovibond,
-                PotentialGravity = new Decimal(request.PotentialGravity.Units, request.PotentialGravity.Nanos),
+                PotentialGravity = request.PotentialGravity != null ? new Decimal(request.PotentialGravity.Units, request.PotentialGravity.Nanos) : null,
             };
         }
     }
