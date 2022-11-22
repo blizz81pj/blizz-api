@@ -34,7 +34,6 @@ The top-level **BeerStuff.Api** project represents the external-facing applicati
 Much of this is overblown for the simple CRUD operations happening, and I may explore less redundant ways of implementing moving forward.
 
 Next steps on the list:
-- add unit tests
 - fix MySQL timestamp -> c# DateTime weirdness (currently the values are stored as UTC on a POST but a further conversion adds another +x offset hours onto the same value on a subsequent GET)
 - add __nameContains__ url param searching & __limit__ response record limiting to GET BeerGrain
 - flesh out remaining CRUD functionality for BeerGrain & expand to the other entities / tables
