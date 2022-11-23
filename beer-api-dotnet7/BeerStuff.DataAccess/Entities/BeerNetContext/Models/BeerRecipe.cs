@@ -24,8 +24,6 @@ namespace BeerStuff.DataAccess.Entities.BeerNetContext.Models
         public decimal? FinalGravity { get; set; }
         public decimal? AlcoholByVolume { get; set; }
         public decimal? BatchSize { get; set; }
-        public DateTime RowCreated { get; set; }
-        public DateTime RowModified { get; set; }
 
         public virtual ICollection<BeerRecipeAdjunct> BeerRecipeAdjunct { get; set; }
         public virtual ICollection<BeerRecipeGrain> BeerRecipeGrain { get; set; }

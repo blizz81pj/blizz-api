@@ -12,7 +12,5 @@ namespace BeerStuff.DataAccess.Entities.BeerNetContext.Models
         public string Manufacturer { get; set; }
         public int? Lovibond { get; set; }
         public decimal? PotentialGravity { get; set; }
-        public DateTime RowCreated { get; set; }
-        public DateTime RowModified { get; set; }
     }
 }

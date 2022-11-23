@@ -11,8 +11,6 @@ namespace BeerStuff.DataAccess.Entities.BeerNetContext.Models
         public uint BeerRecipeId { get; set; }
         public uint BeerGrainId { get; set; }
         public decimal Amount { get; set; }
-        public DateTime RowCreated { get; set; }
-        public DateTime RowModified { get; set; }
 
         public virtual BeerRecipe BeerRecipe { get; set; }
     }

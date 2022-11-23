@@ -15,8 +15,6 @@ namespace BeerStuff.DataAccess.Entities.BeerNetContext.Models
         public uint BeerHopId { get; set; }
         public string Name { get; set; }
         public decimal? AlphaAcid { get; set; }
-        public DateTime RowCreated { get; set; }
-        public DateTime RowModified { get; set; }
 
         public virtual ICollection<BeerRecipeHop> BeerRecipeHop { get; set; }
     }
