@@ -11,8 +11,6 @@ namespace BeerStuff.DataAccess.Entities.BeerNetContext.Models
         public uint BeerRecipeId { get; set; }
         public int Temperature { get; set; }
         public int Minutes { get; set; }
-        public DateTime RowCreated { get; set; }
-        public DateTime RowModified { get; set; }
 
         public virtual BeerRecipe BeerRecipe { get; set; }
     }

@@ -12,8 +12,6 @@ namespace BeerStuff.DataAccess.Entities.BeerNetContext.Models
         public uint BeerYeastId { get; set; }
         public decimal? StarterGallons { get; set; }
         public decimal? StarterMaltExtractOunces { get; set; }
-        public DateTime RowCreated { get; set; }
-        public DateTime RowModified { get; set; }
 
         public virtual BeerRecipe BeerRecipe { get; set; }
         public virtual BeerYeast BeerYeast { get; set; }

@@ -13,8 +13,6 @@ namespace BeerStuff.DataAccess.Entities.BeerNetContext.Models
         public decimal Amount { get; set; }
         public int? BoilMinute { get; set; }
         public bool? IsDryHop { get; set; }
-        public DateTime RowCreated { get; set; }
-        public DateTime RowModified { get; set; }
 
         public virtual BeerHop BeerHop { get; set; }
         public virtual BeerRecipe BeerRecipe { get; set; }

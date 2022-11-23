@@ -15,8 +15,6 @@ namespace BeerStuff.DataAccess.Entities.BeerNetContext.Models
         public uint BeerYeastId { get; set; }
         public string Name { get; set; }
         public bool? IsKettleSour { get; set; }
-        public DateTime RowCreated { get; set; }
-        public DateTime RowModified { get; set; }
 
         public virtual ICollection<BeerRecipeYeast> BeerRecipeYeast { get; set; }
     }

@@ -13,8 +13,6 @@ namespace BeerStuff.DataAccess.Entities.BeerNetContext.Models
         public decimal Amount { get; set; }
         public string AmountUnit { get; set; }
         public string Notes { get; set; }
-        public DateTime RowCreated { get; set; }
-        public DateTime RowModified { get; set; }
 
         public virtual BeerAdjunct BeerAdjunct { get; set; }
         public virtual BeerRecipe BeerRecipe { get; set; }

@@ -15,8 +15,6 @@ namespace BeerStuff.DataAccess.Entities.BeerNetContext.Models
         public uint BeerAdjunctId { get; set; }
         public string Name { get; set; }
         public string Notes { get; set; }
-        public DateTime RowCreated { get; set; }
-        public DateTime RowModified { get; set; }
 
         public virtual ICollection<BeerRecipeAdjunct> BeerRecipeAdjunct { get; set; }
     }
