@@ -1,0 +1,40 @@
+﻿syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "shared.proto";
+
+package calculator;
+
+option csharp_namespace = "OrionSample.Api.Calculator";
+
+service CalculatorService {
+	rpc Calculator (CalculatorRequest) returns (CalculatorResponse) {
+		option (google.api.http) = {
+			post: "/v1/calculator",
+			body: "*"
+		};
+	}
+}
+
+message CalculatorRequest {
+	repeated CalculatorOperation calculator_operation = 1;
+}
+
+message CalculatorResponse {
+	bool success = 1;
+	string message = 2;
+	.shared.Decimal total = 3;
+}
+
+message CalculatorOperation {
+	.shared.Decimal operand = 1;
+	CalculatorOperationType operation_type = 2;
+}
+
+enum CalculatorOperationType {
+	CALCULATOR_OPERATION_TYPE_ADD = 0;
+	CALCULATOR_OPERATION_TYPE_SUBTRACT = 1;
+	CALCULATOR_OPERATION_TYPE_MULTIPLY = 2;
+	CALCULATOR_OPERATION_TYPE_DIVIDE = 3;
+	CALCULATOR_OPERATION_TYPE_EVALUATE = 4;
+}
