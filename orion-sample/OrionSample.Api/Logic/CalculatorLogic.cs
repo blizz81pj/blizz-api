@@ -1,16 +1,21 @@
 ﻿using OrionSample.Api.Calculator;
 using OrionSample.Api.Interfaces;
-using OrionSample.Api.Utilities;
 
 namespace OrionSample.Api.Logic
 {
     public class CalculatorLogic : ICalculatorLogic
     {
+        private readonly IMathUtilsWrapper _mathUtilsWrapper;
+
+        public CalculatorLogic(IMathUtilsWrapper mathUtilsWrapper)
+        {
+            _mathUtilsWrapper = mathUtilsWrapper;
+        }
+
         public CalculatorResponse EvaluateExpression(List<CalculatorOperation> operations)
         {
             try
             {
-                bool lastOperationEvaluated = false;
                 decimal finalResult = 0;
                 var prioritizedOperationsQueue = new Queue<List<CalculatorOperationType>>();
 
@@ -29,47 +34,41 @@ namespace OrionSample.Api.Logic
                         CalculatorOperationType.Subtract,
                     });
 
-                do
+                while (prioritizedOperationsQueue.Count > 0)
                 {
-                    while (prioritizedOperationsQueue.Count > 0)
+                    var prioritizedOperation = prioritizedOperationsQueue.Dequeue();
+                    var nextOperationIndex = 0;
+
+                    do
                     {
-                        var prioritizedOperation = prioritizedOperationsQueue.Dequeue();
-                        var nextOperationIndex = 0;
+                        // grab index of next operation up in the current operations group so we can
+                        // 1) evaluate it
+                        // 2) substitute in place the operation in the collection with the evaluated result (as necessary) and
+                        // 3) whittle down our list of operations one at a time until the last operand in the last operations group is evaluated
+                        nextOperationIndex =
+                            operations.FindIndex(x => prioritizedOperation.Contains(x.OperationType));
 
-                        do
+                        if (nextOperationIndex >= 0)
                         {
-                            // grab index of next operation up in the current operations group so we can
-                            // 1) evaluate it
-                            // 2) substitute in place the operation in the collection with the evaluated result (as necessary) and
-                            // 3) whittle down our list of operations one at a time until the last operand in the last operations group is evaluated
-                            nextOperationIndex =
-                                operations.FindIndex(x => prioritizedOperation.Contains(x.OperationType));
+                            var operand1 = operations[nextOperationIndex];
+                            var operand2 = operations[nextOperationIndex + 1];
+                            var evaluationResult = _mathUtilsWrapper.EvaluateSingleExpression(
+                                operand1,
+                                operand2,
+                                prioritizedOperationsQueue.Count == 0);
 
-                            if (nextOperationIndex >= 0)
+                            if (evaluationResult.operationResult != null)
                             {
-                                var operand1 = operations[nextOperationIndex];
-                                var operand2 = operations[nextOperationIndex + 1];
-                                var evaluationResult = MathUtils.EvaluateSingleExpression(
-                                    operand1,
-                                    operand2,
-                                    prioritizedOperationsQueue.Count == 0);
-
-                                if (evaluationResult.operationResult != null)
-                                {
-                                    lastOperationEvaluated = true;
-                                    finalResult = (decimal)evaluationResult.operationResult;
-
-                                    break;
-                                }
-                                else
-                                {
-                                    operations[nextOperationIndex] = evaluationResult.operation;
-                                    operations.RemoveAt(nextOperationIndex + 1);
-                                }
+                                finalResult = (decimal)evaluationResult.operationResult;
+                                break;
                             }
-                        } while (nextOperationIndex >= 0);
+
+                            operations[nextOperationIndex] = evaluationResult.operation;
+                            operations.RemoveAt(nextOperationIndex + 1);
+                        }
                     }
-                } while (!lastOperationEvaluated);
+                    while (nextOperationIndex >= 0);
+                }
 
                 return new CalculatorResponse
                 {

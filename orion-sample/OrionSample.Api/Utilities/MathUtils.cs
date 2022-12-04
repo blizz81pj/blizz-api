@@ -11,8 +11,8 @@ namespace OrionSample.Api.Utilities
             {
                 CalculatorOperationType.Add => calculatorOperation.OperandOne + calculatorOperation.OperandTwo,
                 CalculatorOperationType.Subtract => calculatorOperation.OperandOne - calculatorOperation.OperandTwo,
-                CalculatorOperationType.Multiply => calculatorOperation.OperandOne * calculatorOperation.OperandTwo,
-                CalculatorOperationType.Divide => calculatorOperation.OperandOne / calculatorOperation.OperandTwo,
+                CalculatorOperationType.Multiply => Math.Round(calculatorOperation.OperandOne * calculatorOperation.OperandTwo, 8),
+                CalculatorOperationType.Divide => Math.Round(calculatorOperation.OperandOne / calculatorOperation.OperandTwo, 8),
                 _ => 0,
             };
         }

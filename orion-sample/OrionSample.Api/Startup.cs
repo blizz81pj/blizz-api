@@ -1,6 +1,7 @@
 ﻿using OrionSample.Api.Interfaces;
 using OrionSample.Api.Logic;
 using OrionSample.Api.Services;
+using OrionSample.Api.Wrappers;
 
 namespace OrionSample.Api
 {
@@ -24,6 +25,7 @@ namespace OrionSample.Api
                 }).AddJsonTranscoding();
 
             services.AddScoped<ICalculatorLogic, CalculatorLogic>();
+            services.AddScoped<IMathUtilsWrapper, MathUtilsWrapper>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
