@@ -118,14 +118,15 @@ Next steps on the list:
 
 ---
 ## golf-api-java
-This directory contains a Spring Boot project that has a REST API with a singular endpoint to add new golf score results hole-by-hole.  The project also contains a Kafka producer exposed via the POST endpoint, and a Kafka consumer that responds to an event of a hole score by persisting it to a MySQL database.
+This directory contains a Spring Boot project that exposes a REST API, and a React / next.js front-end.  The project also contains a Kafka producer exposed via the GolfScoreController POST /insert endpoint, and a Kafka consumer that responds to an event of a hole score by persisting it to a MySQL database.
 
-This isn't necessarily the best usage of Kafka, but I wanted a simple project to play around with Kafka a bit.  I also discovered that the app I use for GPS while playing golf (that also tracks scores) offers a CSV data dump for free, and wanted to slice and dice my score data a bit.  While maybe not a traditional/primary use of Kafka, I can see exposing APIs for event processing as potentially useful in working with legacy/existing application landscapes that rely on traditional RDBMS persistence.
+This isn't necessarily the best usage of Kafka, but I wanted a simple project to play around with Kafka a bit.  I also discovered that the app I use for GPS while playing golf (that also tracks scores) offers a CSV data dump for free, and wanted to slice and dice my score data.  While maybe not a traditional/primary use of Kafka, I can see exposing APIs for event processing as potentially useful in working with legacy/existing application landscapes that rely on traditional RDBMS persistence.
 
-I'm also using this as an opportunity to get more experience using Cursor/AI in greenfield development.  I've been using Cursor in my day-to-day work for bug fixes and porting legacy code in modernization efforts, but have not had much opportunity yet to explore standing up new applications from scratch using Cursor's assistance.
+I'm also using this as an opportunity to get more experience using Cursor/AI in greenfield development.  Much of this app was built from detailed prompts.  I am natively stronger in back-end development and not only wanted to try working with Cursor in general, but also wanted to use this as a way to observe building a quickly functioning React / next.js front-end from the ground up.
 
-This application assumes a Kafka broker is running on **localhost:9092** and a MySQL instance running on localhost:3306 with a db named **golf-stats** .  The scripts to create the tables in the database and some scripts to hydrate those tables from a CSV dump are in the **/scripts** directory (the CSV here has a few sample rounds from my larger data dump).  SQL auth would need to be defined in application.properties.
+This application assumes a Kafka broker is running on **localhost:9092** and a MySQL instance running on localhost:3306 with a db named **golf-stats** .  The scripts to create the tables in the database and some initial scripts to hydrate those tables from a CSV dump are in the **/scripts** directory (the CSV here has a few sample rounds from my larger data dump).  SQL auth would need to be defined in application.properties.
 
 Next steps:
-- add a front-end with some score summary information and the ability to upload new scores via updated CSV dumps from the golf scoring app, potentially some interesting stat/score panels, etc
+- potentially add some more interesting scoring analysis panels
+- consider multi-user functionality + auth
 - add test coverage
